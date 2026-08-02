@@ -1,55 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 
-const nombre = ref('')
-const unidad = ref('')
-const email = ref('')
-
-const sent = ref(false)
-const error = ref('')
-const loading = ref(false)
-
-// Endpoint del servicio externo (ej. Formspree: https://formspree.io/f/xxxx).
-// Si no está configurado en .env, el formulario funciona en modo demo local.
-const endpoint = import.meta.env.VITE_FORM_ENDPOINT as string | undefined
-
-async function submit() {
-  error.value = ''
-  const nombreVal = nombre.value.trim()
-  if (!nombreVal) {
-    error.value = 'Por favor escribe tu nombre.'
-    return
-  }
-
-  loading.value = true
-  try {
-    if (endpoint) {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          nombre: nombreVal,
-          unidad: unidad.value.trim(),
-          email: email.value.trim(),
-        }),
-      })
-      if (!res.ok) throw new Error('bad status')
-    }
-    // Sin endpoint configurado: modo demo, se marca como enviado igualmente.
-    sent.value = true
-  } catch {
-    error.value = 'No pudimos registrar tu apoyo. Intenta nuevamente.'
-  } finally {
-    loading.value = false
-  }
-}
+// Lo que pide el Google Form, para que quien entra sepa a qué se compromete
+// antes de salir del sitio.
+const campos = [
+  'Tu nombre y apellido',
+  'Tu unidad o facultad',
+  'Un correo de contacto',
+]
 
 function share() {
   const txt = encodeURIComponent(
-    'La Universidad la hacemos. La Universidad la decidimos. — Myriam Barahona al Senado Universitario de la U. de Chile. Súmate.',
+    'Construyamos juntos la universidad. Hechos, no solo palabras. — Myriam Barahona al Senado Universitario de la U. de Chile. Súmate.',
   )
   window.open('https://wa.me/?text=' + txt, '_blank', 'noopener')
 }
@@ -64,9 +26,9 @@ function share() {
           Con experiencia y firmeza, llevemos el trabajo universitario al Senado.
         </h2>
         <p class="sumarse__lead">
-          Deja tu apoyo o comparte la campaña con tu unidad. Cada voz suma para
-          que las trabajadoras y trabajadores universitarios incidan en el futuro
-          de la Chile.
+          Deja tu apoyo en el formulario o comparte la campaña con tu unidad.
+          Cada voz suma para que las trabajadoras y trabajadores universitarios
+          incidan en el futuro de la Chile.
         </p>
         <button type="button" class="wa" @click="share">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
@@ -79,64 +41,40 @@ function share() {
       </div>
 
       <div class="card">
-        <div v-if="sent" class="thanks">
-          <div class="thanks__check">
+        <h3 class="card__title">Sumar mi apoyo</h3>
+        <p class="card__sub">
+          El registro se hace en un formulario de Google y toma menos de un
+          minuto.
+        </p>
+
+        <ul class="card__list">
+          <li v-for="campo in campos" :key="campo" class="card__item">
             <svg
-              width="28"
-              height="28"
+              width="17"
+              height="17"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#11184a"
+              stroke="currentColor"
               stroke-width="3"
               stroke-linecap="round"
               stroke-linejoin="round"
+              aria-hidden="true"
             >
               <polyline points="20 6 9 17 4 12" />
             </svg>
-          </div>
-          <h3 class="thanks__title">¡Gracias por sumarte!</h3>
-          <p class="thanks__text">
-            Tu apoyo quedó registrado. Comparte la campaña con tu unidad para que
-            más voces se sumen.
-          </p>
-        </div>
+            {{ campo }}
+          </li>
+        </ul>
 
-        <form v-else class="form" @submit.prevent="submit">
-          <h3 class="form__title">Sumar mi apoyo</h3>
-          <p class="form__sub">Solo toma un minuto.</p>
-
-          <label class="form__label">Nombre</label>
-          <input
-            v-model="nombre"
-            type="text"
-            class="form__input"
-            placeholder="Tu nombre y apellido"
-          />
-
-          <label class="form__label">
-            Unidad o facultad <span>(opcional)</span>
-          </label>
-          <input
-            v-model="unidad"
-            type="text"
-            class="form__input"
-            placeholder="Ej. Biblioteca Central, FCFM, Hospital JJA…"
-          />
-
-          <label class="form__label">Correo <span>(opcional)</span></label>
-          <input
-            v-model="email"
-            type="email"
-            class="form__input form__input--last"
-            placeholder="tucorreo@uchile.cl"
-          />
-
-          <div v-if="error" class="form__error">{{ error }}</div>
-
-          <button type="submit" class="form__submit" :disabled="loading">
-            {{ loading ? 'Enviando…' : 'Sumar mi apoyo' }}
-          </button>
-        </form>
+        <a
+          :href="FORMULARIO_APOYO_URL"
+          target="_blank"
+          rel="noopener"
+          class="card__cta"
+        >
+          Completar el formulario →
+        </a>
+        <p class="card__note">Se abre en Google Forms, en una pestaña nueva.</p>
       </div>
     </div>
   </section>
@@ -199,100 +137,56 @@ function share() {
   padding: 38px 34px;
   box-shadow: 0 18px 50px -28px rgba(17, 24, 74, 0.5);
 }
-.thanks {
-  text-align: center;
-  padding: 30px 8px;
-}
-.thanks__check {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-.thanks__title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--navy-text);
-  margin-bottom: 10px;
-}
-.thanks__text {
-  font-size: 15px;
-  line-height: 1.55;
-  color: #54597d;
-}
-.form__title {
+.card__title {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 21px;
   color: var(--navy-text);
   margin-bottom: 6px;
 }
-.form__sub {
+.card__sub {
   font-size: 13.5px;
+  line-height: 1.5;
   color: #7d82a3;
   margin-bottom: 24px;
 }
-.form__label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--navy-text);
-  margin-bottom: 7px;
+.card__list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  border-top: 1px solid #efe8d8;
 }
-.form__label span {
-  color: #aeb0c0;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.form__input {
-  width: 100%;
-  padding: 13px 15px;
-  border: 1px solid #d8d0bd;
-  border-radius: 2px;
+.card__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #efe8d8;
   font-size: 15px;
-  font-family: inherit;
-  margin-bottom: 18px;
-  background: var(--cream);
-  color: #181822;
+  color: var(--navy-text);
 }
-.form__input--last {
-  margin-bottom: 8px;
-}
-.form__input:focus {
-  outline: none;
-  border-color: var(--navy-text);
-  background: #fff;
-}
-.form__error {
-  font-size: 13px;
+.card__item svg {
   color: var(--red);
-  font-weight: 600;
-  margin-bottom: 8px;
+  flex: none;
 }
-.form__submit {
+.card__cta {
+  display: block;
   width: 100%;
-  margin-top: 12px;
+  text-align: center;
+  text-decoration: none;
   background: var(--accent);
   color: var(--navy);
-  border: none;
-  cursor: pointer;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 15.5px;
   padding: 15px;
   border-radius: 2px;
 }
-.form__submit:disabled {
-  opacity: 0.6;
-  cursor: default;
+.card__note {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12.5px;
+  color: #aeb0c0;
 }
 @media (max-width: 880px) {
   .sumarse {

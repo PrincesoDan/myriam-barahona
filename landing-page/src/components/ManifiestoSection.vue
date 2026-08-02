@@ -3,13 +3,13 @@
 <template>
   <section id="manifiesto" class="manifiesto">
     <div class="manifiesto__inner">
-      <div class="eyebrow">La idea madre</div>
+      <div class="eyebrow">Nuestra mirada</div>
       <p class="manifiesto__quote">
         La Universidad de Chile no existe solo en sus aulas, laboratorios o
         publicaciones. Existe también en el trabajo cotidiano de quienes abren
         espacios, sostienen procesos, cuidan comunidades y resguardan la memoria
         institucional.
-        <span>Si la hacemos entre todas y todos, también debemos decidirla entre todas y todos.</span>
+        <span>Si entre todos y todas construimos la Chile, todos y todas decidamos en ella.</span>
       </p>
       <div class="manifiesto__sign">
         <div class="manifiesto__rule"></div>

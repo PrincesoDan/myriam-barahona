@@ -1,39 +1,46 @@
 <script setup lang="ts">
-import heroImg from '../assets/image/Myriam-Barahona.jpg'
+import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
 </script>
 
 <template>
   <section id="top" class="hero">
-    <div class="hero__glow"></div>
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <div class="badge">
-          <span class="badge__dot"></span>
-          <span>Candidatura · Senado Universitario · U. de Chile</span>
-        </div>
-        <h1 class="hero__title">
-          La Universidad la <span>hacemos</span>.<br />
-          La Universidad la <span>decidimos</span>.
-        </h1>
-        <p class="hero__lead">
-          El trabajo que sostiene cada día a la Universidad de Chile debe estar
-          en el centro de las decisiones que definen su futuro. Llevemos la voz
-          de las <strong>trabajadoras y trabajadores universitarios</strong> al
-          Senado.
-        </p>
-        <div class="hero__actions">
-          <a href="#sumarse" class="btn btn--gold">Sumar mi apoyo →</a>
-          <a href="#manifiesto" class="btn btn--ghost">Leer el manifiesto</a>
-        </div>
-      </div>
-      <div class="hero__media">
-        <span class="corner corner--tl"></span>
-        <span class="corner corner--br"></span>
-        <img :src="heroImg" alt="Myriam Barahona" class="hero__img" />
-        <div class="hero__caption">
-          <div class="hero__name">Myriam Barahona</div>
-          <div class="hero__role">
-            Trabajadora universitaria · dirigenta con trayectoria
+    <div class="hero__banner">
+      <div class="hero__overlay"></div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <div class="badge">
+            <span class="badge__dot"></span>
+            <span>Candidatura · Senado Universitario · U. de Chile</span>
+          </div>
+          <h1 class="hero__title">
+            Construyamos <span>juntos</span><br />
+            la universidad.
+          </h1>
+          <p class="hero__claim">Hechos, no solo palabras.</p>
+          <p class="hero__lead">
+            El trabajo que sostiene cada día a la Universidad de Chile debe estar
+            en el centro de las decisiones que definen su futuro. Llevemos la voz
+            de las <strong>trabajadoras y trabajadores universitarios</strong> al
+            Senado.
+          </p>
+          <div class="hero__actions">
+            <a
+              :href="FORMULARIO_APOYO_URL"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--gold"
+            >
+              Sumar mi apoyo →
+            </a>
+            <a
+              :href="PROGRAMA_PDF_URL"
+              target="_blank"
+              rel="noopener"
+              download
+              class="btn btn--ghost"
+            >
+              Leer el programa
+            </a>
           </div>
         </div>
       </div>
@@ -42,22 +49,24 @@ import heroImg from '../assets/image/Myriam-Barahona.jpg'
     <div class="strip">
       <div class="strip__inner">
         <div class="strip__item">
-          <div class="strip__label">EXPERIENCIA</div>
+          <div class="strip__label">HECHOS</div>
           <div class="strip__text">
-            Conoce las realidades laborales y la institucionalidad
-            universitaria.
+            Una trayectoria de conquistas concretas: beca de hijo/a, vivienda y
+            reajuste 2022.
           </div>
         </div>
         <div class="strip__item">
-          <div class="strip__label">FIRMEZA</div>
+          <div class="strip__label">COMPROMISO</div>
           <div class="strip__text">
-            Ha defendido posiciones difíciles y sostenido acuerdos.
+            Ha defendido posiciones difíciles y transformado conflictos en
+            acuerdos firmados.
           </div>
         </div>
         <div class="strip__item">
           <div class="strip__label">INCIDENCIA</div>
           <div class="strip__text">
-            Convierte diagnósticos y conflictos en propuestas y normas.
+            Lleva esa fuerza al lugar donde se deciden presupuesto, carrera y
+            reglas: el Senado.
           </div>
         </div>
       </div>
@@ -71,25 +80,45 @@ import heroImg from '../assets/image/Myriam-Barahona.jpg'
   color: #fff;
   position: relative;
 }
-.hero__glow {
+/* Banner a todo el ancho con la foto de campaña de fondo. */
+.hero__banner {
+  position: relative;
+  background-image: url('/foto-campana-hero.jpg');
+  background-size: cover;
+  background-position: center 28%;
+  min-height: clamp(560px, 78vh, 760px);
+  display: flex;
+  align-items: center;
+}
+/* Degradado navy: opaco a la izquierda (texto) y en la base (transición a la
+   franja), desvaneciendo a la derecha para dejar visible a Myriam. */
+.hero__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    110% 80% at 85% 0%,
-    rgba(30, 45, 117, 0.9),
-    transparent 60%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 24, 69, 0.95) 0%,
+      rgba(15, 24, 69, 0.82) 32%,
+      rgba(15, 24, 69, 0.32) 60%,
+      rgba(15, 24, 69, 0.04) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(11, 18, 56, 0.88) 0%,
+      rgba(11, 18, 56, 0) 42%
+    );
   pointer-events: none;
 }
 .hero__inner {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 28px 76px;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 56px;
-  align-items: center;
-  position: relative;
+  padding: 64px 28px;
+  width: 100%;
+}
+.hero__copy {
+  max-width: 600px;
 }
 .badge {
   display: inline-flex;
@@ -104,6 +133,8 @@ import heroImg from '../assets/image/Myriam-Barahona.jpg'
   text-transform: uppercase;
   color: #e7d9a8;
   font-weight: 600;
+  background: rgba(15, 24, 69, 0.35);
+  backdrop-filter: blur(2px);
 }
 .badge__dot {
   width: 7px;
@@ -119,14 +150,27 @@ import heroImg from '../assets/image/Myriam-Barahona.jpg'
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin-bottom: 26px;
+  text-shadow: 0 2px 26px rgba(11, 18, 56, 0.55);
 }
 .hero__title span {
   color: var(--accent);
 }
+.hero__claim {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 2px;
+  margin-bottom: 26px;
+}
 .hero__lead {
   font-size: clamp(1.05rem, 1.5vw, 1.3rem);
   line-height: 1.55;
-  color: #cdd3ec;
+  color: #d7dcf1;
   max-width: 520px;
   margin-bottom: 34px;
 }
@@ -155,58 +199,12 @@ import heroImg from '../assets/image/Myriam-Barahona.jpg'
   padding: 15px 28px;
 }
 .btn--ghost {
-  background: transparent;
+  background: rgba(15, 24, 69, 0.25);
   color: #fff;
   font-weight: 700;
   padding: 15px 26px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.hero__media {
-  position: relative;
-}
-.corner {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  z-index: 1;
-}
-.corner--tl {
-  top: -14px;
-  left: -14px;
-  border-top: 3px solid var(--accent);
-  border-left: 3px solid var(--accent);
-}
-.corner--br {
-  bottom: -14px;
-  right: -14px;
-  border-bottom: 3px solid var(--red);
-  border-right: 3px solid var(--red);
-}
-.hero__img {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  object-position: center 22%;
-  filter: saturate(1.02);
-}
-.hero__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(transparent, rgba(15, 24, 69, 0.92));
-  padding: 54px 24px 20px;
-}
-.hero__name {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 20px;
-  color: #fff;
-}
-.hero__role {
-  font-size: 13px;
-  color: #e7d9a8;
-  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(2px);
 }
 .strip {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -246,10 +244,21 @@ import heroImg from '../assets/image/Myriam-Barahona.jpg'
 }
 
 @media (max-width: 880px) {
+  .hero__banner {
+    background-position: center 16%;
+    min-height: clamp(520px, 86vh, 720px);
+    align-items: flex-end;
+  }
+  .hero__overlay {
+    background: linear-gradient(
+      0deg,
+      rgba(11, 18, 56, 0.95) 8%,
+      rgba(15, 24, 69, 0.55) 44%,
+      rgba(15, 24, 69, 0.22) 100%
+    );
+  }
   .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 44px 24px 56px;
+    padding: 44px 24px 40px;
   }
   .strip__inner {
     grid-template-columns: 1fr;

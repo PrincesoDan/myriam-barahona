@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import prensaImg from '../assets/image/myriam-prensa.jpg'
+import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 
 // Datos de trayectoria tomados de info/myriam-barahona-fenafuch.md
 const trayectoria = [
@@ -55,7 +56,14 @@ const trayectoria = [
             <span class="tray__detail">{{ t.detalle }}</span>
           </li>
         </ul>
-        <a href="#sumarse" class="quien__cta">Quiero apoyar a Myriam →</a>
+        <a
+          :href="FORMULARIO_APOYO_URL"
+          target="_blank"
+          rel="noopener"
+          class="quien__cta"
+        >
+          Quiero apoyar a Myriam →
+        </a>
       </div>
     </div>
   </section>
