@@ -1,15 +1,3 @@
-<script setup lang="ts">
-import micImg from '../assets/image/myriam-barahona-mic.jpg'
-import lentesImg from '../assets/image/myriam-lentes.jpeg'
-import retratoImg from '../assets/image/Myriam-Barahona.jpg'
-
-const galeria = [
-  { src: micImg, alt: 'Myriam Barahona interviniendo', pos: 'center 28%' },
-  { src: lentesImg, alt: 'Myriam Barahona', pos: 'center 22%' },
-  { src: retratoImg, alt: 'Myriam Barahona', pos: 'center 18%' },
-]
-</script>
-
 <template>
   <section class="comunidad">
     <div class="comunidad__inner">
@@ -19,16 +7,15 @@ const galeria = [
           sostienen.
         </h2>
       </div>
-      <div class="comunidad__grid">
-        <img
-          v-for="(img, i) in galeria"
-          :key="i"
-          :src="img.src"
-          :alt="img.alt"
-          class="comunidad__img"
-          :style="{ objectPosition: img.pos }"
-        />
-      </div>
+      <img
+        src="/logo-animado-navy.webp"
+        alt="Ilustración de la campaña: Myriam Barahona caminando junto a trabajadoras y trabajadores de la Universidad de Chile, bajo el lema «Vamos juntos al Senado»"
+        width="1400"
+        height="930"
+        loading="lazy"
+        decoding="async"
+        class="comunidad__ilustracion"
+      />
     </div>
   </section>
 </template>
@@ -55,22 +42,19 @@ const galeria = [
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
-.comunidad__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.comunidad__img {
+/* El asset viene con el fondo igualado a --navy-text y los bordes difuminados
+   a alfa (ver public/logo-animado-navy.webp), así que se funde con la sección
+   sin marco. Si cambia el fondo de .comunidad hay que regenerarlo. */
+.comunidad__ilustracion {
+  display: block;
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  max-width: 980px;
+  height: auto;
+  margin: 0 auto;
 }
 @media (max-width: 720px) {
   .comunidad {
     padding: 60px 24px;
-  }
-  .comunidad__grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>

@@ -2,12 +2,13 @@
 import prensaImg from '../assets/image/myriam-prensa.jpg'
 import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 
-// Datos de trayectoria tomados de info/myriam-barahona-fenafuch.md
+// Datos de trayectoria tomados de info/myriam-barahona-fenafuch.md, salvo el
+// período de presidencia de FENAFUCH, corregido por la campaña a "desde 2016".
 const trayectoria = [
   {
     titulo: 'Presidenta de la FENAFUCH',
     detalle:
-      'Federación Nacional de Funcionarios de la U. de Chile. Electa para 2025–2027; ya encabezó el gremio en 2021–2023.',
+      'Federación Nacional de Funcionarios de la U. de Chile, desde 2016 hasta la fecha.',
   },
   {
     titulo: 'Seguridad y condiciones laborales',

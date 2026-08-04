@@ -5,7 +5,6 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
 <template>
   <section id="top" class="hero">
     <div class="hero__banner">
-      <div class="hero__overlay"></div>
       <div class="hero__inner">
         <div class="hero__copy">
           <div class="badge">
@@ -43,6 +42,16 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
             </a>
           </div>
         </div>
+
+        <figure class="hero__media">
+          <img
+            src="/foto-campana-hero.jpg"
+            alt="Myriam Barahona, candidata al Senado Universitario de la U. de Chile"
+            width="2000"
+            height="1333"
+            fetchpriority="high"
+          />
+        </figure>
       </div>
     </div>
 
@@ -80,45 +89,55 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
   color: #fff;
   position: relative;
 }
-/* Banner a todo el ancho con la foto de campaña de fondo. */
 .hero__banner {
   position: relative;
-  background-image: url('/foto-campana-hero.jpg');
-  background-size: cover;
-  background-position: center 28%;
-  min-height: clamp(560px, 78vh, 760px);
   display: flex;
   align-items: center;
+  min-height: clamp(560px, 78vh, 760px);
 }
-/* Degradado navy: opaco a la izquierda (texto) y en la base (transición a la
-   franja), desvaneciendo a la derecha para dejar visible a Myriam. */
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(15, 24, 69, 0.95) 0%,
-      rgba(15, 24, 69, 0.82) 32%,
-      rgba(15, 24, 69, 0.32) 60%,
-      rgba(15, 24, 69, 0.04) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(11, 18, 56, 0.88) 0%,
-      rgba(11, 18, 56, 0) 42%
-    );
-  pointer-events: none;
-}
+/* Dos columnas: el texto manda, la foto acompaña al costado derecho. */
 .hero__inner {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 64px 28px;
   width: 100%;
+  /* Es flex item de .hero__banner: sin esto no baja de su min-content. */
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
 }
 .hero__copy {
   max-width: 600px;
+}
+.hero__media {
+  margin: 0;
+  position: relative;
+}
+/* Filete dorado desplazado: da profundidad sin recargar el bloque. */
+.hero__media::before {
+  content: '';
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid rgba(239, 181, 43, 0.5);
+  border-radius: 2px;
+  pointer-events: none;
+}
+/* Encuadre cuadrado: la foto original es 3:2, así que el recorte solo cede
+   ancho y conserva a Myriam completa, de la cabeza a las manos. */
+.hero__media img {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* Neutraliza el height del atributo HTML para que mande el aspect-ratio. */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2px;
+  box-shadow: 0 24px 60px rgba(6, 11, 38, 0.55);
 }
 .badge {
   display: inline-flex;
@@ -150,7 +169,6 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin-bottom: 26px;
-  text-shadow: 0 2px 26px rgba(11, 18, 56, 0.55);
 }
 .hero__title span {
   color: var(--accent);
@@ -245,20 +263,24 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
 
 @media (max-width: 880px) {
   .hero__banner {
-    background-position: center 16%;
-    min-height: clamp(520px, 86vh, 720px);
-    align-items: flex-end;
-  }
-  .hero__overlay {
-    background: linear-gradient(
-      0deg,
-      rgba(11, 18, 56, 0.95) 8%,
-      rgba(15, 24, 69, 0.55) 44%,
-      rgba(15, 24, 69, 0.22) 100%
-    );
+    min-height: 0;
   }
   .hero__inner {
     padding: 44px 24px 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+  .hero__copy {
+    max-width: none;
+  }
+  /* En móvil la foto pasa a ser una banda horizontal bajo el texto. */
+  .hero__media img {
+    aspect-ratio: 3 / 2;
+    object-position: center 24%;
+  }
+  /* Offset menor: debe caber dentro de los 24px de padding del contenedor. */
+  .hero__media::before {
+    inset: 12px -12px -12px 12px;
   }
   .strip__inner {
     grid-template-columns: 1fr;
