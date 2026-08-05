@@ -1,29 +1,69 @@
 <script setup lang="ts">
 import prensaImg from '../assets/image/myriam-prensa.jpg'
-import { FORMULARIO_APOYO_URL } from '../data/enlaces'
+import {
+  FORMULARIO_APOYO_URL,
+  UCHILE_BUENAS_PRACTICAS_URL,
+  UCHILE_CARRERA_FUNCIONARIA_URL,
+  UCHILE_ENCASILLAMIENTO_URL,
+} from '../data/enlaces'
+
+/**
+ * Trozo de texto del detalle. Si trae `href`, se renderiza como enlace: así se
+ * pueden enlazar palabras dentro de la frase sin recurrir a v-html.
+ */
+interface Fragmento {
+  texto: string
+  href?: string
+}
+
+interface Hito {
+  titulo: string
+  detalle: Fragmento[]
+}
 
 // Datos de trayectoria tomados de info/myriam-barahona-fenafuch.md, salvo el
 // período de presidencia de FENAFUCH, corregido por la campaña a "desde 2016".
-const trayectoria = [
+const trayectoria: Hito[] = [
   {
     titulo: 'Presidenta de la FENAFUCH',
-    detalle:
-      'Federación Nacional de Funcionarios de la U. de Chile, desde 2016 hasta la fecha.',
+    detalle: [
+      {
+        texto:
+          'Federación Nacional de Funcionarios de la U. de Chile, desde 2016 hasta la fecha.',
+      },
+    ],
   },
   {
-    titulo: 'Seguridad y condiciones laborales',
-    detalle:
-      'Visibilizó el grave accidente laboral en la Facultad de Artes (2024) y la sobrecarga por falta de personal.',
+    titulo: 'Buenas prácticas laborales',
+    detalle: [
+      { texto: 'Desde la FENAFUCH impulsó la ' },
+      {
+        texto: 'Política Universitaria de Buenas Prácticas Laborales',
+        href: UCHILE_BUENAS_PRACTICAS_URL,
+      },
+    ],
   },
   {
     titulo: 'Democratización universitaria',
-    detalle:
-      'Reclama derecho a voz y voto de las y los funcionarios en las decisiones de la Universidad.',
+    detalle: [
+      {
+        texto:
+          'Reclama derecho a voz y voto de las y los funcionarios en las decisiones de la Universidad.',
+      },
+    ],
   },
   {
-    titulo: 'Salarios dignos',
-    detalle:
-      'Impulsa un sueldo mínimo que cubra las necesidades de una familia y termine con la desigualdad salarial interna.',
+    titulo: 'Encasillamiento y carrera funcionaria',
+    detalle: [
+      { texto: 'Negoció con Rectoría los avances del ' },
+      { texto: 'encasillamiento', href: UCHILE_ENCASILLAMIENTO_URL },
+      { texto: ' —el paso de contrata a planta— y la ' },
+      {
+        texto: 'Política de Gestión y Desarrollo para la Carrera Funcionaria',
+        href: UCHILE_CARRERA_FUNCIONARIA_URL,
+      },
+      { texto: ', hoy en implementación.' },
+    ],
   },
 ]
 </script>
@@ -54,7 +94,18 @@ const trayectoria = [
         <ul class="tray">
           <li v-for="t in trayectoria" :key="t.titulo" class="tray__item">
             <span class="tray__title">{{ t.titulo }}</span>
-            <span class="tray__detail">{{ t.detalle }}</span>
+            <span class="tray__detail"
+              ><template v-for="(f, i) in t.detalle" :key="i"
+                ><a
+                  v-if="f.href"
+                  :href="f.href"
+                  target="_blank"
+                  rel="noopener"
+                  class="tray__link"
+                  >{{ f.texto }}</a
+                ><template v-else>{{ f.texto }}</template></template
+              ></span
+            >
           </li>
         </ul>
         <a
@@ -154,6 +205,18 @@ const trayectoria = [
   font-size: 13px;
   line-height: 1.5;
   color: #6b7099;
+}
+.tray__link {
+  color: var(--navy-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent);
+}
+.tray__link:hover,
+.tray__link:focus-visible {
+  text-decoration-color: var(--navy-text);
 }
 .quien__cta {
   display: inline-flex;

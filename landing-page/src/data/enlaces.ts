@@ -18,6 +18,21 @@ export const FORMULARIO_APOYO_URL =
 /** Número de contacto de la campaña, en formato E.164 sin símbolos. */
 export const WHATSAPP_NUMERO = '56984923945'
 
+/**
+ * Documentos institucionales de la U. de Chile que respaldan la trayectoria de
+ * Myriam en la FENAFUCH. Se usan las URL cortas uchile.cl/uXXXXXX porque son
+ * los permalinks oficiales del portal (la página enlaza al PDF vigente).
+ */
+
+/** Nota de Rectoría sobre los avances del encasillamiento con la FENAFUCH (2026). */
+export const UCHILE_ENCASILLAMIENTO_URL = 'https://uchile.cl/u241569'
+
+/** Política Universitaria de Buenas Prácticas Laborales, aprobada el 13/01/2022. */
+export const UCHILE_BUENAS_PRACTICAS_URL = 'https://uchile.cl/u183708'
+
+/** Política Universitaria de Gestión y Desarrollo para la Carrera Funcionaria, 13/01/2022. */
+export const UCHILE_CARRERA_FUNCIONARIA_URL = 'https://uchile.cl/u183707'
+
 export interface RedSocial {
   /** Identifica el ícono a renderizar. */
   id: 'facebook' | 'instagram' | 'whatsapp'
