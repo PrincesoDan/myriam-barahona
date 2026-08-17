@@ -18,6 +18,12 @@ export const FORMULARIO_APOYO_URL =
 /** Número de contacto de la campaña, en formato E.164 sin símbolos. */
 export const WHATSAPP_NUMERO = '56984923945'
 
+/** Plataforma oficial de votación electrónica de la U. de Chile. */
+export const PARTICIPA_UCHILE_URL = 'https://participa.uchile.cl'
+
+/** Infografía de la FENAFUCH con el paso a paso para votar (vive en public/). */
+export const INSTRUCTIVO_VOTACION_IMG = '/instructivo-votacion-fenafuch.png'
+
 /**
  * Documentos institucionales de la U. de Chile que respaldan la trayectoria de
  * Myriam en la FENAFUCH. Se usan las URL cortas uchile.cl/uXXXXXX porque son

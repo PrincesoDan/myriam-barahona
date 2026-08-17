@@ -9,6 +9,12 @@ export interface Documento {
 // Los PDF viven en landing-page/public/documents-pdf/
 export const documentos: Documento[] = [
   {
+    titulo: 'Boletín Elecciones Senado Universitario 2026',
+    descripcion:
+      'Boletín oficial de la elección: fechas de la primera vuelta (18 y 19 de agosto), instrucciones de votación en Participa UChile y el listado completo de candidaturas definitivas por estamento.',
+    archivo: 'ELECCIONES SENADO UNIVERSITARIO_BOLETIN.pdf',
+  },
+  {
     titulo: 'Reglamento Interno del Senado Universitario',
     descripcion:
       'D.U. Exento N°0023096 (2007), con modificaciones hasta 2022. Regula el funcionamiento cotidiano del órgano: comisiones, votaciones y quórums.',
