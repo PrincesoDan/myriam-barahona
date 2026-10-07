@@ -34,7 +34,7 @@ const ICONOS: Record<string, string> = {
             <span class="footer__head">Conoce</span>
             <RouterLink to="/senado">¿Qué es el Senado?</RouterLink>
             <RouterLink to="/propuestas">Propuestas</RouterLink>
-            <RouterLink to="/universidad-que-viene">La U que viene</RouterLink>
+            <RouterLink to="/recortes-2027">Recortes 2027</RouterLink>
             <a :href="FORMULARIO_APOYO_URL" target="_blank" rel="noopener">
               Sumar apoyo
             </a>

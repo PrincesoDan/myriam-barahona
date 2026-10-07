@@ -7,7 +7,7 @@ const links = [
   { to: '/', label: 'Inicio' },
   { to: '/senado', label: '¿Qué es el Senado?' },
   { to: '/propuestas', label: 'Propuestas' },
-  { to: '/universidad-que-viene', label: 'La U que viene' },
+  { to: '/recortes-2027', label: 'Recortes 2027' },
 ]
 
 const menuOpen = ref(false)

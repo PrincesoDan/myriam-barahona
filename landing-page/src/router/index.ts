@@ -17,10 +17,12 @@ const routes: RouteRecordRaw[] = [
   // La sección se llamaba "Trabajo digno": mantenemos la URL antigua viva.
   { path: '/trabajo-digno', redirect: '/propuestas' },
   {
-    path: '/universidad-que-viene',
-    name: 'universidad-que-viene',
-    component: () => import('../views/UniversidadQueVieneView.vue'),
+    path: '/recortes-2027',
+    name: 'recortes-2027',
+    component: () => import('../views/Recortes2027View.vue'),
   },
+  // La sección «La U que viene» fue reemplazada por «Recortes 2027»: mantenemos la URL antigua viva.
+  { path: '/universidad-que-viene', redirect: '/recortes-2027' },
   // Cualquier ruta desconocida vuelve al Home.
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
