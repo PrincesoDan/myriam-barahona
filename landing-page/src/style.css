@@ -3,16 +3,17 @@
   --navy: #0f1845;
   --navy-deep: #0b1238;
   --navy-text: #11184a;
-  --cream: #faf7f0;
-  --cream-2: #f5f0e6;
+  --cream: #fafafa; /* casi blanco (antes crema) */
+  --cream-2: #f2f2f2;
   --accent: #efb52b; /* tema "Dorado protagonista" */
   --accent2: #d99a18;
   --red: #c5341e;
 
   /* Tipografías */
-  --font-display: 'Archivo', system-ui, sans-serif;
-  --font-serif: 'Newsreader', Georgia, serif;
-  --font-body: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  /* Una sola familia (Inter Tight) para todo el sitio; las variables se mantienen para no tocar cada componente. */
+  --font-display: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter Tight', system-ui, -apple-system, sans-serif;
 
   color-scheme: light;
   -webkit-font-smoothing: antialiased;
@@ -44,4 +45,11 @@ img {
 
 a {
   color: inherit;
+}
+
+/* Reserva espacio para la barra de navegación inferior en teléfonos (MobileTabBar). */
+@media (max-width: 860px) {
+  body {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom));
+  }
 }

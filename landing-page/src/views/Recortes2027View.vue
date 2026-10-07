@@ -29,11 +29,14 @@ const frame = ref<HTMLIFrameElement | null>(null)
 const alto = ref(1600)
 let observer: ResizeObserver | null = null
 
+// Se ajusta en el siguiente frame y solo si cambia, para no encadenar notificaciones del ResizeObserver.
 function ajustarAlto(): void {
-  const body = frame.value?.contentDocument?.body
-  if (body) {
-    alto.value = body.scrollHeight
-  }
+  requestAnimationFrame(() => {
+    const h = frame.value?.contentDocument?.body?.scrollHeight
+    if (h && h !== alto.value) {
+      alto.value = h
+    }
+  })
 }
 
 function alCargar(): void {
@@ -205,7 +208,7 @@ onBeforeUnmount(() => observer?.disconnect())
   gap: 16px;
   align-items: flex-start;
   background: #fff;
-  border: 1px solid #dcd3bf;
+  border: 1px solid #dddddd;
   border-left: 4px solid var(--accent);
   padding: 20px 22px;
   text-decoration: none;
@@ -261,29 +264,13 @@ onBeforeUnmount(() => observer?.disconnect())
   width: 100%;
   border: 0;
 }
+/* En teléfonos los documentos se eligen desde la barra inferior (MobileTabBar). */
 @media (max-width: 860px) {
   .tabs-bar {
-    top: 0;
-    position: relative;
+    display: none;
   }
   .wrap {
     padding: 0 16px;
-  }
-  /* En pantallas angostas las pestañas se apilan: así la activa siempre queda a la vista. */
-  .tabs {
-    flex-direction: column;
-    gap: 0;
-  }
-  .tab {
-    text-align: left;
-    padding: 12px 4px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 3px solid transparent;
-    padding-left: 10px;
-  }
-  .tab--on {
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-    border-left-color: var(--accent);
   }
 }
 </style>

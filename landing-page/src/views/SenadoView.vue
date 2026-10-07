@@ -201,7 +201,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
         rel="noopener"
         class="cta__btn"
       >
-        Sumar mi apoyo →
+        Suscríbete →
       </a>
     </div>
   </section>
@@ -274,8 +274,8 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 }
 /* Tabla de composición */
 .table {
-  border: 1px solid #dcd3bf;
-  background: #dcd3bf;
+  border: 1px solid #dddddd;
+  background: #dddddd;
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -298,7 +298,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   text-transform: uppercase;
 }
 .table__row--hl {
-  background: linear-gradient(90deg, rgba(239, 181, 43, 0.18), rgba(250, 247, 240, 0)),
+  background: linear-gradient(90deg, rgba(239, 181, 43, 0.18), rgba(250, 250, 250, 0)),
     var(--cream);
   border-left: 3px solid var(--accent);
 }
@@ -333,8 +333,8 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: #dcd3bf;
-  border: 1px solid #dcd3bf;
+  background: #dddddd;
+  border: 1px solid #dddddd;
 }
 .func__item {
   background: var(--cream);
@@ -364,8 +364,8 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: #dcd3bf;
-  border: 1px solid #dcd3bf;
+  background: #dddddd;
+  border: 1px solid #dddddd;
 }
 .limites__col {
   background: var(--cream);
@@ -402,12 +402,12 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   border-left: 2px solid var(--accent);
 }
 .limites__col--no .limites__list li {
-  border-left-color: #d8cdb2;
+  border-left-color: #d4d4d4;
 }
 /* Herramientas */
 .tools {
-  border: 1px solid #dcd3bf;
-  background: #dcd3bf;
+  border: 1px solid #dddddd;
+  background: #dddddd;
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -484,7 +484,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   gap: 20px;
   align-items: flex-start;
   background: #fff;
-  border: 1px solid #e3dbc8;
+  border: 1px solid #e5e5e5;
   padding: 24px 26px;
   text-decoration: none;
   transition: border-color 0.15s ease, transform 0.15s ease;

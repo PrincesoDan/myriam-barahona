@@ -114,7 +114,7 @@ const trayectoria: Hito[] = [
           rel="noopener"
           class="quien__cta"
         >
-          Quiero apoyar a Myriam →
+          Suscríbete →
         </a>
       </div>
     </div>
@@ -184,8 +184,8 @@ const trayectoria: Hito[] = [
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: #e3dbc8;
-  border: 1px solid #e3dbc8;
+  background: #e5e5e5;
+  border: 1px solid #e5e5e5;
   margin: 26px 0 32px;
 }
 .tray__item {

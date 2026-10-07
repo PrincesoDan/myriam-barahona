@@ -113,7 +113,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
         rel="noopener"
         class="cta__btn"
       >
-        Sumar mi apoyo →
+        Suscríbete →
       </a>
     </div>
   </section>
@@ -136,7 +136,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 /* Los ejes van uno tras otro: separador fino en vez de aire duplicado. */
 .block--eje {
   padding: 64px 28px;
-  border-top: 1px solid #e3dbc8;
+  border-top: 1px solid #e5e5e5;
   /* Compensa la nav sticky al saltar desde el índice. */
   scroll-margin-top: 104px;
 }
@@ -191,8 +191,8 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: #dcd3bf;
-  border: 1px solid #dcd3bf;
+  background: #dddddd;
+  border: 1px solid #dddddd;
 }
 .indice__item {
   background: var(--cream);
@@ -267,7 +267,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   color: var(--red);
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #e3dbc8;
+  border-bottom: 1px solid #e5e5e5;
 }
 .eje__text {
   font-size: 14.5px;

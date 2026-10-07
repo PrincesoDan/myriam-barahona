@@ -1,7 +1,10 @@
 export interface DocumentoRecortes {
   id: string
-  // Etiqueta corta para la pestaña
+  // Etiqueta para las pestañas de escritorio
   pestana: string
+  // Etiqueta corta para la barra inferior en móvil
+  corta: string
+  numero: string
   titulo: string
   // Archivo HTML dentro de public/analisis-presupuesto-2027/ (generado desde el análisis en context/)
   archivo: string
@@ -15,25 +18,23 @@ export interface FuentePresupuesto {
   peso: string
 }
 
-// Los tres documentos del análisis, en el orden en que se leen.
+// Los dos documentos del análisis, en el orden en que se leen.
 export const documentosRecortes: DocumentoRecortes[] = [
   {
     id: 'general',
-    pestana: '1 · Comparativo general',
-    titulo: 'Presupuesto 2027 vs Ley 2026',
-    archivo: '01-comparativo-general-2026-2027.html',
-  },
-  {
-    id: 'lineas-uchile',
-    pestana: '2 · Lo que toca a la U. de Chile',
-    titulo: 'Líneas del Proyecto 2027 que afectan a la Universidad',
-    archivo: '02-partidas-2027-universidad-de-chile.html',
+    pestana: '1 · Comparativo general y U. de Chile',
+    corta: 'General y U. de Chile',
+    numero: '1',
+    titulo: 'Presupuesto 2027 vs Ley 2026 y lo que toca a la U. de Chile',
+    archivo: '01-comparativo-general-y-uchile-2026-2027.html',
   },
   {
     id: 'donde-baja',
-    pestana: '3 · ¿Dónde baja y dónde no?',
+    pestana: '2 · ¿Dónde baja y dónde no?',
+    corta: 'Dónde baja',
+    numero: '2',
     titulo: 'Las líneas de la U. de Chile, 2026 vs 2027',
-    archivo: '03-uchile-comparativo-2026-2027.html',
+    archivo: '02-uchile-comparativo-2026-2027.html',
   },
 ]
 

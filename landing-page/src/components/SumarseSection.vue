@@ -11,7 +11,7 @@ const campos = [
 
 function share() {
   const txt = encodeURIComponent(
-    'Construyamos juntos la universidad. Hechos, no solo palabras. — Myriam Barahona al Senado Universitario de la U. de Chile. Súmate.',
+    'Construyamos juntos la universidad. Hechos, no solo palabras. — Myriam Barahona al Senado Universitario de la U. de Chile. Suscríbete.',
   )
   window.open('https://wa.me/?text=' + txt, '_blank', 'noopener')
 }
@@ -21,14 +21,14 @@ function share() {
   <section id="sumarse" class="sumarse">
     <div class="sumarse__inner">
       <div class="sumarse__copy">
-        <div class="eyebrow">Súmate</div>
+        <div class="eyebrow">Suscríbete</div>
         <h2 class="sumarse__title">
           Con experiencia y firmeza, llevemos el trabajo universitario al Senado.
         </h2>
         <p class="sumarse__lead">
-          Deja tu apoyo en el formulario o comparte la campaña con tu unidad.
-          Cada voz suma para que las trabajadoras y trabajadores universitarios
-          incidan en el futuro de la Chile.
+          Suscríbete en el formulario para seguir la campaña o compártela con
+          tu unidad. Cada voz suma para que las trabajadoras y trabajadores
+          universitarios incidan en el futuro de la Chile.
         </p>
         <button type="button" class="wa" @click="share">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
@@ -41,7 +41,7 @@ function share() {
       </div>
 
       <div class="card">
-        <h3 class="card__title">Sumar mi apoyo</h3>
+        <h3 class="card__title">Suscríbete</h3>
         <p class="card__sub">
           El registro se hace en un formulario de Google y toma menos de un
           minuto.
@@ -133,7 +133,7 @@ function share() {
 }
 .card {
   background: #fff;
-  border: 1px solid #e3dbc8;
+  border: 1px solid #e5e5e5;
   padding: 38px 34px;
   box-shadow: 0 18px 50px -28px rgba(17, 24, 74, 0.5);
 }
@@ -154,14 +154,14 @@ function share() {
   list-style: none;
   margin: 0 0 28px;
   padding: 0;
-  border-top: 1px solid #efe8d8;
+  border-top: 1px solid #ececec;
 }
 .card__item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 13px 0;
-  border-bottom: 1px solid #efe8d8;
+  border-bottom: 1px solid #ececec;
   font-size: 15px;
   color: var(--navy-text);
 }

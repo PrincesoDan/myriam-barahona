@@ -29,7 +29,7 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
               rel="noopener"
               class="btn btn--gold"
             >
-              Sumar mi apoyo →
+              Suscríbete →
             </a>
             <a
               :href="PROGRAMA_PDF_URL"
