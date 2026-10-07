@@ -15,7 +15,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 <template>
   <PageHero
     eyebrow="Primera parte · El Senado Universitario"
-    title="Qué es, cómo funciona, qué puede hacer y qué no."
+    title="Qué es, cómo funciona, qué puede hacer y qué no"
     lead="El Senado Universitario es el órgano colegiado encargado de ejercer la función normativa de la Universidad (Estatuto, Art. 24). Su tarea fundamental es establecer las políticas y estrategias de desarrollo institucional, junto con los objetivos y metas que conduzcan a cumplirlas."
   />
 
@@ -193,7 +193,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   <section class="block block--cta">
     <div class="wrap wrap--narrow cta">
       <h2 class="cta__title">
-        Ahora que sabes qué decide el Senado, decidamos quién se sienta ahí.
+        Ahora que sabes qué decide el Senado, sigue lo que Myriam hace ahí
       </h2>
       <a
         :href="FORMULARIO_APOYO_URL"

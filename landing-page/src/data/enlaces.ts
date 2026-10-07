@@ -1,9 +1,12 @@
 /**
- * Enlaces de la campaña, centralizados para no repetir URLs en los
+ * Enlaces del sitio, centralizados para no repetir URLs en los
  * componentes: si el formulario o el programa cambian, se edita solo acá.
  */
 
 /** Programa completo en PDF (vive en public/documents-pdf/). */
+/** Reporte «Recortes 2027 a la U. de Chile» en PDF (vive en public/documents-pdf/). */
+export const REPORTE_RECORTES_PDF_URL = '/documents-pdf/reporte-recortes-2027-uchile.pdf'
+
 export const PROGRAMA_PDF_URL =
   '/documents-pdf/programa-myriam-barahona-senado-universitario.pdf'
 
@@ -15,14 +18,10 @@ export const PROGRAMA_PDF_URL =
 export const FORMULARIO_APOYO_URL =
   'https://docs.google.com/forms/d/1h0Y6qbDAnIBxo0MrGWz9LjQsMIz75zQYOM2cA0teaHY/viewform'
 
-/** Número de contacto de la campaña, en formato E.164 sin símbolos. */
+/** Número de contacto, en formato E.164 sin símbolos. */
 export const WHATSAPP_NUMERO = '56984923945'
 
-/** Plataforma oficial de votación electrónica de la U. de Chile. */
-export const PARTICIPA_UCHILE_URL = 'https://participa.uchile.cl'
 
-/** Infografía de la FENAFUCH con el paso a paso para votar (vive en public/). */
-export const INSTRUCTIVO_VOTACION_IMG = '/instructivo-votacion-fenafuch.png'
 
 /**
  * Documentos institucionales de la U. de Chile que respaldan la trayectoria de

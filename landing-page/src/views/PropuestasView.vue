@@ -7,7 +7,7 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
 <template>
   <PageHero
     eyebrow="Propuestas · Programa 2026–2030"
-    title="Nueve ejes para una universidad que cuida y garantiza trabajo digno."
+    title="Nueve ejes para una universidad que cuida y garantiza trabajo digno"
     lead="En cada eje: el problema, la situación actual verificable y el compromiso concreto que asumo. Todos comparten la misma lógica: existe un compromiso institucional escrito que todavía no se traduce plenamente en resultados y derechos efectivos."
   />
 
@@ -102,9 +102,9 @@ import { FORMULARIO_APOYO_URL } from '../data/enlaces'
   <!-- CTA -->
   <section class="block block--cta">
     <div class="wrap wrap--narrow cta">
-      <h2 class="cta__title">Hechos, no solo palabras.</h2>
+      <h2 class="cta__title">Hechos, no solo palabras</h2>
       <p class="cta__sub">
-        Llevemos estas propuestas al lugar donde se deciden el presupuesto, la
+        Estas propuestas ya están en el lugar donde se deciden el presupuesto, la
         carrera y las reglas de la Universidad.
       </p>
       <a

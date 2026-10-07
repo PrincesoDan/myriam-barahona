@@ -10,7 +10,7 @@ import { PROGRAMA_PDF_URL } from '../data/enlaces'
         <div class="eyebrow">El programa</div>
         <h2 class="programa__title">
           Cinco compromisos para poner el trabajo universitario
-          <span>al centro de las decisiones</span>.
+          <span>al centro de las decisiones</span>
         </h2>
       </div>
 

@@ -19,14 +19,9 @@ const ICONOS: Record<string, string> = {
     <div class="footer__inner">
       <div class="footer__top">
         <div class="footer__brand">
-          <img
-            src="/logo-myriam-transparent.png"
-            alt="Myriam Barahona · Vamos juntos al Senado"
-            class="footer__logo"
-          />
+          <span class="footer__word">Myriam<br />Barahona</span>
           <p class="footer__sub">
-            Myriam Barahona, candidata al Senado Universitario de la Universidad
-            de Chile.
+            Myriam Barahona, Senadora Universitaria de la Universidad de Chile.
           </p>
         </div>
         <div class="footer__cols">
@@ -100,11 +95,13 @@ const ICONOS: Record<string, string> = {
 .footer__brand {
   max-width: 440px;
 }
-.footer__logo {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  display: block;
+.footer__word {
+  font-family: 'Anton', var(--font-display);
+  font-size: 54px;
+  line-height: 0.86;
+  color: #fafafa;
+  display: inline-block;
+  text-align: center;
   margin-bottom: 18px;
 }
 .footer__sub {

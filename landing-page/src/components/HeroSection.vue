@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
+import { FORMULARIO_APOYO_URL, REPORTE_RECORTES_PDF_URL } from '../data/enlaces'
 </script>
 
 <template>
@@ -9,16 +9,16 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
         <div class="hero__copy">
           <div class="badge">
             <span class="badge__dot"></span>
-            <span>Candidatura · Senado Universitario · U. de Chile</span>
+            <span>Senadora Universitaria · U. de Chile</span>
           </div>
           <h1 class="hero__title">
             Construyamos <span>juntos</span><br />
-            la universidad.
+            la universidad
           </h1>
-          <p class="hero__claim">Hechos, no solo palabras.</p>
+          <p class="hero__claim">Hechos, no solo palabras</p>
           <p class="hero__lead">
             El trabajo que sostiene cada día a la Universidad de Chile debe estar
-            en el centro de las decisiones que definen su futuro. Llevemos la voz
+            en el centro de las decisiones que definen su futuro. Llevamos la voz
             de las <strong>trabajadoras y trabajadores universitarios</strong> al
             Senado.
           </p>
@@ -32,13 +32,12 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
               Suscríbete →
             </a>
             <a
-              :href="PROGRAMA_PDF_URL"
+              :href="REPORTE_RECORTES_PDF_URL"
               target="_blank"
               rel="noopener"
-              download
               class="btn btn--ghost"
             >
-              Leer el programa
+              Lee el reporte Recortes 2027
             </a>
           </div>
         </div>
@@ -46,7 +45,7 @@ import { FORMULARIO_APOYO_URL, PROGRAMA_PDF_URL } from '../data/enlaces'
         <figure class="hero__media">
           <img
             src="/foto-campana-hero.jpg"
-            alt="Myriam Barahona, candidata al Senado Universitario de la U. de Chile"
+            alt="Myriam Barahona, Senadora Universitaria de la U. de Chile"
             width="2000"
             height="1333"
             fetchpriority="high"

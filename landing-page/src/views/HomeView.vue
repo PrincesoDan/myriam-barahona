@@ -5,7 +5,6 @@ import ProgramaSection from '../components/ProgramaSection.vue'
 import QuienSection from '../components/QuienSection.vue'
 import ComunidadSection from '../components/ComunidadSection.vue'
 import SumarseSection from '../components/SumarseSection.vue'
-import ComoVotarSection from '../components/ComoVotarSection.vue'
 </script>
 
 <template>
@@ -15,5 +14,4 @@ import ComoVotarSection from '../components/ComoVotarSection.vue'
   <QuienSection />
   <ComunidadSection />
   <SumarseSection />
-  <ComoVotarSection />
 </template>

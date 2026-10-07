@@ -11,7 +11,7 @@ const campos = [
 
 function share() {
   const txt = encodeURIComponent(
-    'Construyamos juntos la universidad. Hechos, no solo palabras. — Myriam Barahona al Senado Universitario de la U. de Chile. Suscríbete.',
+    'Construyamos juntos la universidad. Hechos, no solo palabras. — Myriam Barahona, Senadora Universitaria de la U. de Chile. Suscríbete.',
   )
   window.open('https://wa.me/?text=' + txt, '_blank', 'noopener')
 }
@@ -23,11 +23,11 @@ function share() {
       <div class="sumarse__copy">
         <div class="eyebrow">Suscríbete</div>
         <h2 class="sumarse__title">
-          Con experiencia y firmeza, llevemos el trabajo universitario al Senado.
+          Con experiencia y firmeza, el trabajo universitario tiene voz en el Senado
         </h2>
         <p class="sumarse__lead">
-          Suscríbete en el formulario para seguir la campaña o compártela con
-          tu unidad. Cada voz suma para que las trabajadoras y trabajadores
+          Suscríbete en el formulario para seguir el trabajo de Myriam en el
+          Senado o comparte esta página con tu unidad. Cada voz suma para que las trabajadoras y trabajadores
           universitarios incidan en el futuro de la Chile.
         </p>
         <button type="button" class="wa" @click="share">

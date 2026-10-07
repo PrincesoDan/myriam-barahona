@@ -15,11 +15,7 @@ const links = [
   <header class="nav">
     <div class="nav__inner">
       <RouterLink to="/" class="brand" aria-label="Myriam Barahona · Inicio">
-        <img
-          src="/logo-myriam-transparent.png"
-          alt="Myriam Barahona · Vamos juntos al Senado"
-          class="brand__logo"
-        />
+        <span class="brand__word">Myriam<br />Barahona</span>
       </RouterLink>
 
       <nav class="nav__links">
@@ -71,9 +67,13 @@ const links = [
   text-decoration: none;
   color: #fff;
 }
-.brand__logo {
-  height: 74px;
-  width: auto;
+/* Wordmark en texto (Anton, casi blanco): reemplaza al logo con el lema de campaña. */
+.brand__word {
+  font-family: 'Anton', var(--font-display);
+  font-size: 34px;
+  line-height: 0.86;
+  color: #fafafa;
+  text-align: center;
   display: block;
 }
 .nav__links {
@@ -121,8 +121,8 @@ const links = [
     height: 64px;
     justify-content: center;
   }
-  .brand__logo {
-    height: 46px;
+  .brand__word {
+    font-size: 22px;
   }
 }
 </style>

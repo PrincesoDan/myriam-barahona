@@ -14,7 +14,7 @@
       <div class="manifiesto__sign">
         <div class="manifiesto__rule"></div>
         <div class="manifiesto__name">
-          Myriam Barahona <span>— al Senado Universitario</span>
+          Myriam Barahona <span>— Senadora Universitaria</span>
         </div>
       </div>
     </div>

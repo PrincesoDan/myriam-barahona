@@ -22,7 +22,7 @@ interface Hito {
 }
 
 // Datos de trayectoria tomados de info/myriam-barahona-fenafuch.md, salvo el
-// período de presidencia de FENAFUCH, corregido por la campaña a "desde 2016".
+// período de presidencia de FENAFUCH, corregido a "desde 2016".
 const trayectoria: Hito[] = [
   {
     titulo: 'Presidenta de la FENAFUCH',
@@ -78,7 +78,7 @@ const trayectoria: Hito[] = [
       <div class="quien__copy">
         <div class="eyebrow">Quién es Myriam</div>
         <h2 class="quien__title">
-          De la defensa gremial al gobierno universitario.
+          De la defensa gremial al gobierno universitario
         </h2>
         <p class="quien__p">
           Myriam Barahona es trabajadora universitaria y dirigenta con
@@ -87,9 +87,9 @@ const trayectoria: Hito[] = [
           conflictos y construir acuerdos leyendo la Universidad desde abajo.
         </p>
         <p class="quien__p">
-          Hoy busca llevar esa experiencia a un espacio de deliberación
-          normativa y estratégica: el Senado Universitario. Una voz trabajadora
-          con experiencia para transformar demandas en decisiones.
+          Hoy lleva esa experiencia al Senado Universitario, el espacio de
+          deliberación normativa y estratégica de la Universidad: una voz
+          trabajadora para transformar demandas en decisiones.
         </p>
         <ul class="tray">
           <li v-for="t in trayectoria" :key="t.titulo" class="tray__item">

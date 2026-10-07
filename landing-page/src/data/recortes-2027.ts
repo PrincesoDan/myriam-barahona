@@ -22,16 +22,16 @@ export interface FuentePresupuesto {
 export const documentosRecortes: DocumentoRecortes[] = [
   {
     id: 'general',
-    pestana: '1 · Comparativo general y U. de Chile',
-    corta: 'General y U. de Chile',
+    pestana: '1 · Datos generales',
+    corta: 'Datos generales',
     numero: '1',
     titulo: 'Presupuesto 2027 vs Ley 2026 y lo que toca a la U. de Chile',
     archivo: '01-comparativo-general-y-uchile-2026-2027.html',
   },
   {
     id: 'donde-baja',
-    pestana: '2 · ¿Dónde baja y dónde no?',
-    corta: 'Dónde baja',
+    pestana: '2 · Recortes U. de Chile',
+    corta: 'Recortes U. de Chile',
     numero: '2',
     titulo: 'Las líneas de la U. de Chile, 2026 vs 2027',
     archivo: '02-uchile-comparativo-2026-2027.html',

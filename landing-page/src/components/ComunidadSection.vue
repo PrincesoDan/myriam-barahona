@@ -4,12 +4,12 @@
       <div class="comunidad__head">
         <h2 class="comunidad__title">
           La Universidad se sostiene con trabajo, y debe decidirse con quienes la
-          sostienen.
+          sostienen
         </h2>
       </div>
       <img
         src="/logo-animado-navy.webp"
-        alt="Ilustración de la campaña: Myriam Barahona caminando junto a trabajadoras y trabajadores de la Universidad de Chile, bajo el lema «Vamos juntos al Senado»"
+        alt="Ilustración: Myriam Barahona caminando junto a trabajadoras y trabajadores de la Universidad de Chile, bajo el lema «Vamos juntos al Senado»"
         width="1400"
         height="930"
         loading="lazy"

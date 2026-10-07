@@ -9,7 +9,7 @@ export interface Composicion {
   estamento: string
   escanos: string
   mandato: string
-  // Marca la fila del estamento que representa esta candidatura.
+  // Marca la fila del estamento que representa Myriam.
   destacado?: boolean
 }
 
