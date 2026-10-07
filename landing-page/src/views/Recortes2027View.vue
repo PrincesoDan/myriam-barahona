@@ -8,6 +8,7 @@ import {
   recortesHref,
   fuenteHref,
   DIPRES_PROYECTO_2027_URL,
+  DATOS_RECORTES_XLSX_URL,
 } from '../data/recortes-2027'
 import type { DocumentoRecortes } from '../data/recortes-2027'
 
@@ -135,6 +136,25 @@ onBeforeUnmount(() => observer?.disconnect())
       @load="alCargar"
     ></iframe>
   </section>
+
+  <section v-if="activo.id === 'donde-baja'" class="datos">
+    <div class="wrap datos__inner">
+      <div>
+        <div class="eyebrow">Datos abiertos</div>
+        <h2 class="fuentes__title">Descarga todos los datos de Recortes U. de Chile</h2>
+        <p class="datos__desc">
+          Planilla Excel con las 48 líneas, sus montos 2026 y 2027, las
+          variaciones nominal y real, la comparación con la base DIPRES y los
+          bloques. Las variaciones son fórmulas: puedes revisarlas o cambiar el
+          supuesto de inflación.
+        </p>
+      </div>
+      <a :href="DATOS_RECORTES_XLSX_URL" class="datos__btn" download>
+        Descargar Excel →
+        <span class="datos__meta">XLSX · 3 hojas</span>
+      </a>
+    </div>
+  </section>
 </template>
 
 <style scoped>
@@ -258,6 +278,47 @@ onBeforeUnmount(() => observer?.disconnect())
 }
 .doc {
   background: var(--cream);
+}
+.datos {
+  background: var(--cream-2);
+  padding: 48px 0;
+  border-top: 1px solid #dddddd;
+}
+.datos__inner {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.datos__desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #3a4170;
+  max-width: 640px;
+}
+.datos__btn {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  padding: 16px 26px;
+  border-left: 4px solid var(--accent);
+}
+.datos__btn:hover {
+  background: var(--navy-deep);
+}
+.datos__meta {
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 .doc__frame {
   display: block;

@@ -57,6 +57,9 @@ export const fuentesPresupuesto: FuentePresupuesto[] = [
   },
 ]
 
+// Planilla con todos los datos de «Recortes U. de Chile» (líneas, bloques y supuestos, con fórmulas).
+export const DATOS_RECORTES_XLSX_URL = '/datos/recortes-2027-uchile-datos.xlsx'
+
 export const DIPRES_PROYECTO_2027_URL =
   'https://www.dipres.gob.cl/597/w3-multipropertyvalues-15168-38403.html'
 
