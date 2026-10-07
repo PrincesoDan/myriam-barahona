@@ -57,6 +57,9 @@ export const fuentesPresupuesto: FuentePresupuesto[] = [
   },
 ]
 
+// Fecha de la última actualización del análisis: cambiarla aquí cada vez que se actualicen los documentos.
+export const ULTIMA_ACTUALIZACION = '7 de octubre de 2026'
+
 // Planilla con todos los datos de «Recortes U. de Chile» (líneas, bloques y supuestos, con fórmulas).
 export const DATOS_RECORTES_XLSX_URL = '/datos/recortes-2027-uchile-datos.xlsx'
 

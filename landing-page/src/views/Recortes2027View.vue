@@ -9,6 +9,7 @@ import {
   fuenteHref,
   DIPRES_PROYECTO_2027_URL,
   DATOS_RECORTES_XLSX_URL,
+  ULTIMA_ACTUALIZACION,
 } from '../data/recortes-2027'
 import type { DocumentoRecortes } from '../data/recortes-2027'
 
@@ -62,6 +63,7 @@ onBeforeUnmount(() => observer?.disconnect())
     eyebrow="Recortes 2027"
     title="Lo que el Presupuesto 2027 le quita a la Universidad de Chile"
     lead="El Proyecto de Ley de Presupuestos 2027 entró al Congreso el 30 de septiembre. Lo comparamos línea por línea con la Ley 2026 para ver qué baja, qué se mantiene y qué está en juego para la U. de Chile, sus estudiantes y su investigación."
+    :note="`Última actualización: ${ULTIMA_ACTUALIZACION}. El proyecto sigue en tramitación: si el Congreso introduce cambios, los reflejaremos en esta página.`"
   />
 
   <section class="tabs-bar">

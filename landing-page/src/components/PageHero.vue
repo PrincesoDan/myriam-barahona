@@ -4,6 +4,8 @@ defineProps<{
   eyebrow: string
   title: string
   lead: string
+  // Línea opcional bajo la bajada (por ejemplo, fecha de última actualización).
+  note?: string
 }>()
 </script>
 
@@ -14,6 +16,7 @@ defineProps<{
       <div class="eyebrow">{{ eyebrow }}</div>
       <h1 class="page-hero__title">{{ title }}</h1>
       <p class="page-hero__lead">{{ lead }}</p>
+      <p v-if="note" class="page-hero__note">{{ note }}</p>
     </div>
   </header>
 </template>
@@ -62,6 +65,15 @@ defineProps<{
   font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   line-height: 1.6;
   color: #cdd3ec;
+  max-width: 640px;
+}
+.page-hero__note {
+  margin-top: 20px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b9c0e0;
   max-width: 640px;
 }
 @media (max-width: 720px) {
